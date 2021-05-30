@@ -14,11 +14,9 @@ let limits = {
 };
 
 export default function Change() {
-  const [change2, setChange2] = useState({
-    sum: "",
-    mount: "",
-  });
-  console.log("change2", change2);
+  const [change2, setChange2] = useState({});
+
+  console.log(Object.getOwnPropertyNames(change2));
 
   const [change, setChange] = useState("");
 
@@ -51,12 +49,9 @@ export default function Change() {
   };
   let handleChang2 = () => {
     let a = handleResolve(change, limits);
-    let k = Object.keys(a);
 
-    let v = Object.values(a);
     setChange2({
-      sum: k.toString(),
-      mount: v.toString(),
+      ...a,
     });
     setChange("");
   };
